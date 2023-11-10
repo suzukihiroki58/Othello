@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>メニュー</title>
+<title>Insert title here</title>
 </head>
 <body>
-<a href="OthelloServlet">オセロをプレイする</a>
-<a href="LogoutServlet">ログアウトする</a>
+
 </body>
 </html>

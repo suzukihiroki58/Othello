@@ -14,7 +14,7 @@
 			required> <input type="submit" value="ログイン">
 	</form>
 	<p>
-		アカウントをまだ持っていない方<br> <a href="UserRegister"><button>新規登録ページへ</button></a>
+		アカウントをまだ持っていない方<br> <a href="UserRegisterServlet"><button>新規登録ページへ</button></a>
 	</p>
 	<%if (request.getAttribute("errorMessage") != null) { %>
 		<%=request.getAttribute("errorMessage")%>
