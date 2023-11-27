@@ -13,7 +13,7 @@ public class UsersDAO extends BaseDAO {
 
 		try (Connection con = getConnection();
 				PreparedStatement ps = con
-						.prepareStatement("INSERT INTO users (user_id, username, password) VALUES (UUID(), ?, ?)")) {
+						.prepareStatement("INSERT INTO users (username, password) VALUES (?, ?)")) {
 
 			ps.setString(1, user.getUserName());
 			ps.setString(2, user.getPassword());
@@ -52,14 +52,13 @@ public class UsersDAO extends BaseDAO {
 	public static User findUser(User user) {
 		try (Connection con = getConnection();
 				PreparedStatement ps = con.prepareStatement(
-						"SELECT user_id, username, password FROM users WHERE username = ? AND password = ?")) {
+						"SELECT username, password FROM users WHERE username = ? AND password = ?")) {
 
 			ps.setString(1, user.getUserName());
 			ps.setString(2, user.getPassword());
 
 			try (ResultSet rs = ps.executeQuery()) {
 				if (rs.next()) {
-					user.setUserId(rs.getString("user_id"));
 					return user;
 				}
 			}
